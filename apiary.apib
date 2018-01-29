@@ -1,0 +1,77 @@
+FORMAT: 1A
+HOST: http://cardealer.apiblueprint.org/
+
+# Car Dealer API 2018
+
+Car Dealers is an API allowing consumers to purchase and sell cars from a dealer network.  This dealer network is backed by a blockchain. The API's to the BlockChain are implemented using Oracle Functions
+
+http://www.oracle.com
+
+## Car Collection [/cars]
+
+### Sell Car to Dealer Network [POST]
+
++ Request 200 (application/json)
+
+        + Request (application/json)
+
+    + Attributes
+
+        + plate: "4PWR456" (required)
+        + color: "red" (required)
+        + model: "3" (required)
+        + manufacturer: "tesla" (required)
+        + year: "2017" (required)
+        + description: "Awesome go fast zoom zoom car" (required)
+        + condition: "good" (required)
+
+        
++ Response 201 (application/json)
+
+
+        [
+            {
+                "plate": "4PWR456",
+                "color": "red",
+                "model": "3",
+                "manufacturer": "tesla",
+                "year": "2017",
+                "description": "Awesome go-fast zoom zoom car",
+                "condition": "good"
+            }
+        
+        ]
+
+### List all Cars on the Dealer Network [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "plate":"4PWR456",
+                "color":"red",
+                "model": "3",
+                "manufacturer":"tesla",
+                "year":"2017",
+                "description":"Awesome go-fast zoom car",
+                "condition":"good"
+            },
+            {
+                "plate":"coveffe",
+                "color":"blue",
+                "model": "A4",
+                "manufacturer":"Audi",
+                "year":"2015",
+                "description":"4 Door Sedan",
+                "condition":"good"
+            },
+            {
+                "plate":"oracle1",
+                "color":"red",
+                "model": "",
+                "manufacturer":"Audi",
+                "year":"2015",
+                "description":"4 Door Sedan",
+                "condition":"good"
+            }
+        ]
